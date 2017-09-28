@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Registration</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/bootstrap.min.css" content="text/html">
+        <style>
+            *{
+                box-sizing: border-box;
+            }
+            html, body{
+                margin:0;
+                padding:0;
+            }
+            .grid-container {
+                height:100vh;
+                display: grid;
+                grid-template-areas: "header"
+                    "."
+                    "menu"
+                    "."
+                    "content"
+                    "."
+                    "sidebar"
+                    "."
+                    "footer";
+                grid-template-columns: 1fr;
+                grid-template-rows: 70px 5px 10px 5px 1fr 5px 10px 5px 65px;
+            }
+            .header { grid-area: header; text-align: center; background-color: #778899; }
+            .menu { grid-area: menu; }
+            .sidebar { grid-area: sidebar; }
+            .content { grid-area: content; background-color: #eee;}
+            .footer { grid-area: footer; text-align: center; background-color: #778899; }
+            h3{ 
+                text-align:center;
+            }
+            @media screen and (max-width: 799px) and (min-width: 468px) {
+
+                .grid-container {
+                    height:100vh;
+                    display: grid;
+                    grid-template-areas: "header header header header header"
+                        ". . . . ."
+                        ". . content . ."
+                        ". . . . ."
+                        "footer footer footer footer footer";
+                    grid-template-columns: 60px 5px 1fr 5px 60px;
+                    grid-template-rows: 70px 5px 1fr 5px 65px;
+                }
+            }
+            @media screen and (max-width: 1199px) and (min-width: 800px) {
+
+                .grid-container {
+                    height:100vh;
+                    display: grid;
+                    grid-template-areas: "header header header header header"
+                        ". . . . ."
+                        ". . content . ."
+                        ". . . . ."
+                        "footer footer footer footer footer";
+                    grid-template-columns: 100px 5px 1fr 5px 100px;
+                    grid-template-rows: 70px 5px 1fr 5px 65px;
+                }
+            }
+            @media screen and (max-width: 1399px) and (min-width: 1200px) {
+
+                .grid-container {
+                    height:100vh;
+                    display: grid;
+                    grid-template-areas: "header header header header header"
+                        ". . . . ."
+                        "menu . content . sidebar"
+                        ". . . . ."
+                        "footer footer footer footer footer";
+                    grid-template-columns: 200px 10px 1fr 10px 200px;
+                    grid-template-rows: 70px 5px 1fr 5px 65px;
+                }
+            }
+            @media screen and (max-width: 1599px) and (min-width: 1400px) {
+
+                .grid-container {
+                    height:100vh;
+                    display: grid;
+                    grid-template-areas: "header header header header header"
+                        ". . . . ."
+                        "menu . content . sidebar"
+                        ". . . . ."
+                        "footer footer footer footer footer";
+                    grid-template-columns: 280px 10px 1fr 10px 280px;
+                    grid-template-rows: 70px 5px 1fr 5px 65px;
+                }
+            }
+            @media screen and (min-width: 1600px) {
+
+                .grid-container {
+                    height:100vh;
+                    display: grid;
+                    grid-template-areas: "header header header header header"
+                        ". . . . ."
+                        "menu . content . sidebar"
+                        ". . . . ."
+                        "footer footer footer footer footer";
+                    grid-template-columns: 400px 15px 1fr 15px 400px;
+                    grid-template-rows: 70px 5px 1fr 5px 65px;
+                }
+            }
+        </style>
+    <body>
+        <div class="grid-container">
+            <div class="header">
+                <h3></h3>
+            </div>
+            
+            <div class="content">
+                <div class="row justify-content-md-center">
+                <div class="col-sm-10">
+                <form action = "registration.jsp" method = "GET" class="form-horizontal">
+                    <h2 style="text-align: center">Registration for the course</h2>
+                    <div class="row justify-content-center">
+                    <div class="form-group col-sm-5" >
+                        <label for="firstName" class="control-label">First Name</label>
+                            <input type="text" name="firstName" id="firstName" placeholder="Full Name" class="form-control" oninvalid="this.setCustomValidity('First name is required.')" oninput="setCustomValidity('')" required autofocus>
+                    </div>
+                    <div class="form-group col-sm-5" >
+                        <label for="lastName" class="control-label">Last Name</label>
+                            <input type="text" name="lastName" id="lastName" placeholder="Last Name" class="form-control" oninvalid="this.setCustomValidity('Last name is required.')" oninput="setCustomValidity('')" required autofocus>
+                    </div>
+                    </div>
+                    <div class="row justify-content-center">
+                    <div class="form-group col-sm-10">
+                        <label for="email" class="control-label">Email</label>
+                            <input type="email" name="email" id="email" placeholder="Email" class="form-control" oninvalid="this.setCustomValidity('Email is wrong.')" oninput="setCustomValidity('')" required>
+                    </div>
+                    </div>
+                    <div class="row justify-content-center">
+                    <div class="form-group col-sm-5">
+                    
+                        <label for="studentcode" class="control-label">Student Code</label>
+                            <input type="text" name="studentCode" id="studentcode" placeholder="Student Code" class="form-control" oninvalid="this.setCustomValidity('Student code is required.')" oninput="setCustomValidity('')" required>
+                    </div>
+                    <div class="form-group col-sm-5">
+                        <label for="group" class="control-label">Group</label>
+                        <select name="group" id="group" class="form-control" oninvalid="this.setCustomValidity('Select group.')" oninput="setCustomValidity('')" required>
+                            <option>RDIR</option>
+                            <option>RDDR</option>
+                            <option>RDBR</option>
+                        </select>
+                    </div>
+                    </div>
+                    <div class="row justify-content-center">
+                    <div class="form-group col-sm-5">
+                        <label for="birthDate" class="control-label">Date of Birth</label>
+                            <input type="date" name="birthDate" id="birthDate" class="form-control">
+                    </div>
+                    <div class="form-group col-sm-5">
+                        <label for="course" class="control-label">Course</label>
+                            <select name="course" id="course" class="form-control" oninvalid="this.setCustomValidity('Select course.')" oninput="setCustomValidity('')" required>
+                                <option>Estonian I</option>
+                                <option>Programming</option>
+                                <option>Mathematics</option>
+                                <option>Physics</option>
+                                <option>Database</option>
+                            </select>
+                    </div> 
+                    </div><!-- /.form-group -->
+                    <div class="row justify-content-center">
+                    <div class="form-group col-sm-10">
+                        <label class="control-label">Gender</label>
+                                <div class="col-sm-6">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="gender" id="femaleRadio" value="Female">
+                                        <label for="femaleRadio">Female</label><br>
+                                    </label>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="gender" id="maleRadio" value="Male">
+                                        <label for="maleRadio">Male</label><br>
+                                    </label>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="gender" id="uncknownRadio" value="Unknown">
+                                        <label for="uncknownRadio">Unknown</label>
+                                    </label>
+                                </div>
+                    </div> 
+                    </div><!-- /.form-group -->  
+                    <div class="row justify-content-center">
+                    <div class="form-group col-sm-5">
+                        <div class="col-sm-offset-3">
+                            <button type="submit" class="btn btn-primary btn-block">Register</button>
+                        </div>
+                    </div>
+                    </div>
+                </form>
+                </div>
+                </div>
+            </div>
+            <div class="footer">
+                <h6>Ivan Panas RDIR51</h6>
+            </div>
+        </div>
+
+    </body>
+</html>
